@@ -27,7 +27,7 @@ from srilm import LM
 
 # Use lower=True if you passed -lower to ngram-count. lower=False is
 # default.
-lm = LM("path/to/model/from/ngram-count", debug=False, lower=True)
+lm = LM("path/to/model/from/ngram-count", lower=True)
 
 # Compute log10(P(brown | the quick))
 #
