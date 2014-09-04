@@ -4,7 +4,7 @@ from Cython.Distutils import build_ext
 import os.path
 
 # Adjust to point to your SRILM build directory
-SRILM_DIR = "./srilm-1.5.7"
+SRILM_DIR = "/opt/srilm"
 # Adjust to match your architecture -- if unsure, build SRILM and then see
 # what subdirectories you have in SRILM_DIR/lib/.
 SRILM_ARCH = "i686-m64"
