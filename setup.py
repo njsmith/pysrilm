@@ -4,7 +4,7 @@ from Cython.Distutils import build_ext
 import os.path
 
 # Adjust to point to your SRILM build directory
-SRILM_DIR = "./srilm-1.5.7"
+SRILM_DIR = "/opt/srilm"
 # Adjust to match your architecture -- if unsure, build SRILM and then see
 # what subdirectories you have in SRILM_DIR/lib/.
 SRILM_ARCH = "i686-m64"
@@ -20,7 +20,8 @@ setup(
                 language="c++",
                 include_dirs=[SRILM_INCLUDE_DIR],
                 libraries=["oolm", "dstruct", "misc"],
-                extra_link_args=["-L" + SRILM_LIB_DIR],
+                extra_compile_args=['-fopenmp'],
+                extra_link_args=["-L" + SRILM_LIB_DIR, '-lgomp', '-lz'],
                 )
       ],
 )
